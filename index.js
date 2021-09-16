@@ -2,15 +2,18 @@ const { app, BrowserWindow } = require('electron')
 const express = require('express');
 const nodemailer = require("nodemailer");
 const multer  = require("multer");
-var XLSX = require('xlsx')
+var XLSX = require('xlsx');
+//let mailInPacket=require('./front')
+
+var mailInPacket;
+var delayMail;
+var delayPacket;
 
 // Для xlmx -------
 var workbook;
 var sheet_name_list
 var xlData
 // -------------
-
-
 
 const serv = express()
 const port = 3001||process.env.PORT;

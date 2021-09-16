@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
-    "dev": "nodemon main.js"
+    "dev": "nodemon main.js",
+    "electron-dev": "electron .",
+    "electron-trace": "electron --trace-warnings ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
-    "electron": "^14.0.0",
+    "electron": "^14.0.1",
     "excel": "^1.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",

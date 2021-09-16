@@ -48,15 +48,6 @@
                        
                         </tbody>
                       </table>
-
-                          <form method="POST" action="http://localhost:3001/download_email_address" enctype="multipart/form-data">
-                          <div class="form-group">
-                            <label for="exampleFormControlFile1">Загрузить адреса из файла</label>
-                            <input name="filedata" accept=".xlsx, .xls" type="file" class="form-control-file" id="exampleFormControlFile1" >
-                            <br>
-                            <button type="submit" class="btn btn-primary" id="btnRefreshTable">Загрузить таблицу</button>
-                          </div>
-                        </form>
                       
 
                       <form method="GET" action="http://localhost:3001/refresh_table">
@@ -67,11 +58,43 @@
                 <div class="d-flex flex-column emailAdressInputBlock">
                   <form method="POST" action="/add_email">
                     <input type="email" class="form-control" id="emailAddressInput" placeholder="Введите email-адрес..." required>
-                    <button type="submit" class="btn btn-primary" id="btnAddressAdd">Добавить адрес в таблицу</button>
+                    <button type="submit" class="btn btn-secondary" id="btnAddressAdd">Добавить адрес в таблицу</button>
+                  </form>
+                  <form method="POST" action="http://localhost:3001/download_email_address" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Загрузить адреса из файла</label>
+                      <input name="filedata" accept=".xlsx, .xls" type="file" class="form-control-file" id="exampleFormControlFile1" >
+                      <br>
+                      <button type="submit" class="btn btn-secondary" id="btnRefreshTable">Загрузить таблицу</button>
+                    </div>
                   </form>
                 </div>
             </div>
         </div>
+        <div class="d-flex flex-row rangeBlock justify-content-around">
+          <div class="d-flex flex-column align-items-center">
+            <label for="mailInPacketInput" id="mailInPacketLabel">Количество писем в пакете</label>
+            <form id="mailInPacketInputForm">
+              <input name="mailInPacketIn" class="form-range" type="range" id="mailInPacketInput" min="1" max="30" value="1">
+            </form>
+            <span id="mailInPacketCount">1</span>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <label for="delayMailInput" id="delayMailLabel">Задержка между письмами</label>
+            <form id="delayMailForm">
+              <input name="delayMailIn" class="form-range" type="range" id="delayMailInput" min="1" max="60" value="1">
+            </form>
+            <span id="delayMailCount">1 мин.</span>
+          </div>      
+          <div class="d-flex flex-column align-items-center">
+            <label for="delayPacketInput" id="delayPacketLabel">Задержка между пакетами</label>
+            <form id="delayPacketForm">
+              <input name="delayPacketIn" class="form-range" type="range" id="delayPacketInput" min="1" max="24" value="1">
+            </form>
+            <span id="delayPacketCount">1 ч.</span>
+          </div>              
+        </div> 
     </div>
 </body>
+<script src="front.js"></script>
 </html>

@@ -10,6 +10,7 @@ body {
 #emailTextInput {
     width:400px;
     margin-bottom: 40px;
+    resize: none;
 }
 
 #btnTextUpload {
@@ -36,8 +37,17 @@ margin-bottom: 20px;
 #emailAddressInput {
     margin-top: 60px;
     margin-bottom: 20px;
+    width:250px;
+}
+
+#btnAddressAdd {
+    margin-bottom: 50px;
 }
 
 .btn {
     width:250px;
+}
+
+.rangeBlock {
+    margin-top: 60px;
 }
